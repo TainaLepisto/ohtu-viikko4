@@ -16,12 +16,17 @@ public class Kauppa {
         kaupanTili = "33333-44455";
     }
 
+    public String getKaupanTili() {
+        return this.kaupanTili ;
+    }
+    
     public void aloitaAsiointi() {
         ostoskori = new Ostoskori();
     }
 
     public void poistaKorista(int id) {
         Tuote t = varasto.haeTuote(id); 
+        ostoskori.poista(t);
         varasto.palautaVarastoon(t);
     }
 
